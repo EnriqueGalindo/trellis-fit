@@ -1,0 +1,73 @@
+{
+ "model": "Qwen3.6-35B-A3B-bf16",
+ "layers": 40,
+ "experts_per_layer": 256,
+ "texts": {
+  "wiki.test.raw": {
+   "tokens": 8192,
+   "top_k": 8,
+   "experts_touched_after_128_tokens_pct": 48.7,
+   "experts_touched_after_512_tokens_pct": 68.2,
+   "experts_touched_after_2048_tokens_pct": 87.6,
+   "experts_touched_after_8192_tokens_pct": 96.3,
+   "experts_needed_for_50pct_of_activations_pct": 10.3,
+   "experts_needed_for_80pct_of_activations_pct": 29.2,
+   "experts_needed_for_90pct_of_activations_pct": 42.4,
+   "experts_needed_for_95pct_of_activations_pct": 54.1,
+   "experts_needed_for_99pct_of_activations_pct": 73.2,
+   "lru_10pct": {
+    "miss_rate_pct": 38.35,
+    "expert_loads_per_token": 122.72,
+    "tokens_with_a_miss_pct": 100.0
+   },
+   "lru_25pct": {
+    "miss_rate_pct": 17.84,
+    "expert_loads_per_token": 57.09,
+    "tokens_with_a_miss_pct": 100.0
+   },
+   "lru_50pct": {
+    "miss_rate_pct": 4.17,
+    "expert_loads_per_token": 13.34,
+    "tokens_with_a_miss_pct": 99.7
+   },
+   "lru_75pct": {
+    "miss_rate_pct": 0.56,
+    "expert_loads_per_token": 1.78,
+    "tokens_with_a_miss_pct": 66.8
+   }
+  },
+  "code_sample.txt": {
+   "tokens": 8192,
+   "top_k": 8,
+   "experts_touched_after_128_tokens_pct": 49.2,
+   "experts_touched_after_512_tokens_pct": 84.0,
+   "experts_touched_after_2048_tokens_pct": 94.9,
+   "experts_touched_after_8192_tokens_pct": 99.3,
+   "experts_needed_for_50pct_of_activations_pct": 8.1,
+   "experts_needed_for_80pct_of_activations_pct": 30.5,
+   "experts_needed_for_90pct_of_activations_pct": 47.2,
+   "experts_needed_for_95pct_of_activations_pct": 60.6,
+   "experts_needed_for_99pct_of_activations_pct": 80.6,
+   "lru_10pct": {
+    "miss_rate_pct": 41.12,
+    "expert_loads_per_token": 131.57,
+    "tokens_with_a_miss_pct": 100.0
+   },
+   "lru_25pct": {
+    "miss_rate_pct": 19.26,
+    "expert_loads_per_token": 61.65,
+    "tokens_with_a_miss_pct": 100.0
+   },
+   "lru_50pct": {
+    "miss_rate_pct": 6.32,
+    "expert_loads_per_token": 20.22,
+    "tokens_with_a_miss_pct": 99.8
+   },
+   "lru_75pct": {
+    "miss_rate_pct": 1.59,
+    "expert_loads_per_token": 5.09,
+    "tokens_with_a_miss_pct": 88.2
+   }
+  }
+ }
+}

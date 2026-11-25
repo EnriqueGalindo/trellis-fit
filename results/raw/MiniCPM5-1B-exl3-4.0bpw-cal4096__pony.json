@@ -1,0 +1,36 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-exl3-4.0bpw-cal4096",
+  "runtime": "pony",
+  "size_on_disk_gib": 0.8415418285876513,
+  "weights_gib": 0.8317640274763107,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.3875045410823077,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " Paris, a city renowned for its rich history, cultural significance, and global influence. Paris has been the capital of France",
+    "at": "2026-11-21 15:46:30"
+  },
+  "ppl": {
+    "ppl": 22.364508122740478,
+    "scored_tokens": 16368,
+    "top1_acc": 0.40597507331378296,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 3.015475916909054,
+    "at": "2026-11-21 15:46:34"
+  },
+  "kld": {
+    "kld_mean": 0.037870708646553536,
+    "kld_median": 0.02400878630578518,
+    "kld_p95": 0.115979665517807,
+    "kld_p99": 0.24435423478484153,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.8899071358748778,
+    "at": "2026-11-21 15:46:34"
+  }
+}

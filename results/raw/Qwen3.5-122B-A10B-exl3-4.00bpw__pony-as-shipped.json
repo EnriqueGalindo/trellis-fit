@@ -1,0 +1,70 @@
+{
+  "model": "~/llm-trellis/models/Qwen3.5-122B-A10B-exl3-4.00bpw",
+  "runtime": "pony",
+  "size_on_disk_gib": 59.40847082156688,
+  "weights_gib": 59.326923195272684,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 38.045146874850616,
+    "model_type": "qwen3_5_moe",
+    "prompt": "The capital of France is",
+    "completion": " Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is",
+    "at": "2026-11-21 09:26:11"
+  },
+  "ppl": {
+    "ppl": 4.622348766661255,
+    "scored_tokens": 16368,
+    "top1_acc": 0.635569403714565,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c206c280ac95644f",
+    "seconds": 89.9458960830234,
+    "at": "2026-11-21 09:28:12"
+  },
+  "speed": {
+    "decode_tps": 27.491316924522522,
+    "prefill_tps": 428.66998436064495,
+    "ttft_s": 1.2307546250522137,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 430.75745647350993,
+        "decode_tps": 27.470938235275497,
+        "ttft_s": 1.2273767080623657,
+        "total_s": 5.848156541120261
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 411.93787100941154,
+        "decode_tps": 27.491316924522522,
+        "ttft_s": 1.332959125051275,
+        "total_s": 5.899011415895075
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 428.66998436064495,
+        "decode_tps": 27.813753673231457,
+        "ttft_s": 1.2307546250522137,
+        "total_s": 5.796522999880835
+      }
+    ],
+    "at": "2026-11-21 09:34:09"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 114.05100921541452,
+    "load_peak_footprint_gib": 114.95536730438471,
+    "peak_footprint_gib": 114.95536730438471,
+    "mlx_peak_gib_during_8k": 74.58491641096771,
+    "mlx_active_gib": 58.53710122965276,
+    "prefill_tps_8k": 150.1971356012467,
+    "decode_tps_8k": 23.829357968939053,
+    "at": "2026-11-21 09:35:29"
+  }
+}

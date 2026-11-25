@@ -1,0 +1,81 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-exl3-4.0bpw",
+  "runtime": "pony",
+  "size_on_disk_gib": 0.8415419906377792,
+  "weights_gib": 0.8317640274763107,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.413807291071862,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " Paris, a city that has been a significant player in the history of European politics and culture. Paris has been the capital",
+    "at": "2026-11-21 08:26:12"
+  },
+  "ppl": {
+    "ppl": 22.64046057414028,
+    "scored_tokens": 16368,
+    "top1_acc": 0.4060361681329423,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 3.782450916012749,
+    "at": "2026-11-21 08:26:17"
+  },
+  "kld": {
+    "kld_mean": 0.05762406893722546,
+    "kld_median": 0.037549152970314026,
+    "kld_p95": 0.17166239395737648,
+    "kld_p99": 0.35667126178741454,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.8610703812316716,
+    "at": "2026-11-21 08:26:17"
+  },
+  "speed": {
+    "decode_tps": 198.60258007921672,
+    "prefill_tps": 13174.795244949744,
+    "ttft_s": 0.04462725017219782,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 17843.39941054276,
+        "decode_tps": 201.16027297115355,
+        "ttft_s": 0.0342593330424279,
+        "total_s": 0.6650462080724537
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 13174.795244949744,
+        "decode_tps": 197.4372235208909,
+        "ttft_s": 0.04462725017219782,
+        "total_s": 0.687216583173722
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 13009.63134740167,
+        "decode_tps": 198.60258007921672,
+        "ttft_s": 0.04522774997167289,
+        "total_s": 0.6839169580489397
+      }
+    ],
+    "at": "2026-11-21 08:26:20"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 0.9986281841993332,
+    "load_peak_footprint_gib": 1.3449875712394714,
+    "peak_footprint_gib": 2.210008457303047,
+    "mlx_peak_gib_during_8k": 1.7120513170957565,
+    "mlx_active_gib": 0.8928119391202927,
+    "prefill_tps_8k": 18385.14238568509,
+    "decode_tps_8k": 168.3716488795368,
+    "at": "2026-11-21 08:26:23"
+  }
+}

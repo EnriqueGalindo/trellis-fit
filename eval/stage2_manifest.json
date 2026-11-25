@@ -1,0 +1,5 @@
+{"params": 125085000000, "rows": [
+ {"model": "../models/Qwen3.5-122B-A10B-exl3-4.00bpw", "runtime": "pony", "label": "turboderp EXL3 4.00bpw", "format": "EXL3", "bpw": 4.0, "note": "peak is the load transient; 77.7 GiB while running at 8k"},
+ {"model": "../models/Qwen3.5-122B-A10B-exl3-4.00bpw", "runtime": "mlxl3", "label": "turboderp EXL3 4.00bpw", "format": "EXL3", "bpw": 4.0},
+ {"model": "../models/gguf/Qwen3.5-122B-A10B-MTP-GGUF/UD-Q4_K_M/Qwen3.5-122B-A10B-UD-Q4_K_M-00001-of-00003.gguf", "runtime": "llama", "label": "unsloth UD-Q4_K_M", "format": "GGUF", "bpw": null}
+]}

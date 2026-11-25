@@ -1,0 +1,115 @@
+{
+ "label": "exl3-2.08-pruned10",
+ "runtime": "mlxl3",
+ "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10",
+ "items": {
+  "32k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 24.0,
+   "why": "stop"
+  },
+  "32k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 20.8,
+   "why": "stop"
+  },
+  "32k-0:copy-bravo": {
+   "ok": true,
+   "seconds": 22.9,
+   "why": "stop"
+  },
+  "32k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 18.0,
+   "why": "stop"
+  },
+  "32k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 18.3,
+   "why": "stop"
+  },
+  "32k-1:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 30.6,
+   "why": "stop"
+  },
+  "32k-1:copy-alpha": {
+   "ok": true,
+   "seconds": 21.0,
+   "why": "stop"
+  },
+  "32k-1:copy-bravo": {
+   "ok": true,
+   "seconds": 21.4,
+   "why": "stop"
+  },
+  "32k-1:copy-charlie": {
+   "ok": true,
+   "seconds": 21.4,
+   "why": "stop"
+  },
+  "32k-1:copy-dexter": {
+   "ok": true,
+   "seconds": 22.5,
+   "why": "stop"
+  },
+  "64k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 75.3,
+   "why": "stop"
+  },
+  "64k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 41.4,
+   "why": "stop"
+  },
+  "64k-0:copy-bravo": {
+   "ok": true,
+   "seconds": 39.1,
+   "why": "stop"
+  },
+  "64k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 40.7,
+   "why": "stop"
+  },
+  "64k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 40.8,
+   "why": "stop"
+  },
+  "64k-1:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 62.1,
+   "why": "stop"
+  },
+  "64k-1:copy-alpha": {
+   "ok": true,
+   "seconds": 48.2,
+   "why": "stop"
+  },
+  "64k-1:copy-bravo": {
+   "ok": true,
+   "seconds": 51.0,
+   "why": "stop"
+  },
+  "64k-1:copy-charlie": {
+   "ok": true,
+   "seconds": 49.3,
+   "why": "stop"
+  },
+  "64k-1:copy-dexter": {
+   "ok": true,
+   "seconds": 50.8,
+   "why": "stop"
+  }
+ }
+}

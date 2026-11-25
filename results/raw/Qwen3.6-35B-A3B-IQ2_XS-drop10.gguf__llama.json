@@ -1,0 +1,71 @@
+{
+  "model": "~/llm-trellis/models/gguf/own/Qwen3.6-35B-A3B-IQ2_XS-drop10.gguf",
+  "runtime": "llama",
+  "size_on_disk_gib": 10.891660332679749,
+  "weights_gib": 10.891660332679749,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.7734447089023888,
+    "prompt": "The capital of France is",
+    "completion": " Paris.\nA. True\nB. False\n\n<think>\n\n</think>\n\nParis is the capital and most populous city of",
+    "at": "2026-11-21 14:48:03"
+  },
+  "ppl": {
+    "ppl": 6.6793,
+    "ppl_stderr": 0.128,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "scored_tokens": 16368,
+    "seconds": 32.97118370886892,
+    "tokens_match_reference": true,
+    "ppl_from_dump": 6.677825959386208,
+    "top1_acc": 0.5731304985337243,
+    "at": "2026-11-21 14:48:47"
+  },
+  "kld": {
+    "kld_mean": 0.17866389222627416,
+    "kld_median": 0.07799245789647102,
+    "kld_p95": 0.6491941183805465,
+    "kld_p99": 1.7775766003131865,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8292399804496579,
+    "at": "2026-11-21 14:48:47"
+  },
+  "speed": {
+    "decode_tps": 132.73508480935794,
+    "prefill_tps": 3301.8411633830974,
+    "ttft_s": 0.15560504188761115,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3271.6073048856856,
+        "decode_tps": 132.7020754813585,
+        "ttft_s": 0.15704887500032783,
+        "total_s": 1.1141539581585675
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3301.8411633830974,
+        "decode_tps": 133.11796872461457,
+        "ttft_s": 0.15560504188761115,
+        "total_s": 1.1097059999592602
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3305.9558861511437,
+        "decode_tps": 132.73508480935794,
+        "ttft_s": 0.1554176250938326,
+        "total_s": 1.1122679580003023
+      }
+    ],
+    "at": "2026-11-21 14:48:51"
+  }
+}

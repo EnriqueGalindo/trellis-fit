@@ -1,0 +1,81 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-exl3-2.0bpw",
+  "runtime": "pony",
+  "size_on_disk_gib": 0.6833378160372376,
+  "weights_gib": 0.6735609024763107,
+  "load": {
+    "ok": true,
+    "sane": false,
+    "load_s": 0.3695340829435736,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " a country, specifically, is a nation, is a state, is a nation, is a nation, is a nation",
+    "at": "2026-11-21 08:26:24"
+  },
+  "ppl": {
+    "ppl": 65.89391363746677,
+    "scored_tokens": 16368,
+    "top1_acc": 0.3052297165200391,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 3.6068380000069737,
+    "at": "2026-11-21 08:26:29"
+  },
+  "kld": {
+    "kld_mean": 1.2124250891855715,
+    "kld_median": 0.9437707960605621,
+    "kld_p95": 3.239508855342865,
+    "kld_p99": 5.13785448551178,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.47892228739002934,
+    "at": "2026-11-21 08:26:29"
+  },
+  "speed": {
+    "decode_tps": 206.1092610660803,
+    "prefill_tps": 13448.600805012866,
+    "ttft_s": 0.04372004116885364,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 18179.558564576415,
+        "decode_tps": 198.93110801199202,
+        "ttft_s": 0.03392162499949336,
+        "total_s": 0.671642041997984
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 13448.600805012866,
+        "decode_tps": 208.1372165346094,
+        "ttft_s": 0.04372004116885364,
+        "total_s": 0.6530922499950975
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 13442.49519727466,
+        "decode_tps": 206.1092610660803,
+        "ttft_s": 0.04374316590838134,
+        "total_s": 0.6591587499715388
+      }
+    ],
+    "at": "2026-11-21 08:26:32"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 0.8432021364569664,
+    "load_peak_footprint_gib": 1.2148452252149582,
+    "peak_footprint_gib": 2.05241559445858,
+    "mlx_peak_gib_during_8k": 1.5538481920957565,
+    "mlx_active_gib": 0.7345859259366989,
+    "prefill_tps_8k": 18461.44686382765,
+    "decode_tps_8k": 179.34356744367662,
+    "at": "2026-11-21 08:26:34"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "model": "~/llm-trellis/models/gguf/Qwen_Qwen3.6-35B-A3B-GGUF/Qwen_Qwen3.6-35B-A3B-IQ2_XS.gguf",
+  "runtime": "llama",
+  "size_on_disk_gib": 10.891660332679749,
+  "weights_gib": 10.891660332679749,
+  "budget": {
+    "budget_gib": 10.5,
+    "weights_gib": 10.891660332679749,
+    "over": true,
+    "at": "2026-11-21 13:19:39"
+  },
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 2.0507357500027865,
+    "prompt": "The capital of France is",
+    "completion": " Paris.\nA. True\nB. False\n\n<think>\n\n</think>\n\nParis is indeed the capital and most populous city",
+    "at": "2026-11-21 13:19:41"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 10.938820771872997,
+    "load_peak_footprint_gib": 10.938820771872997,
+    "peak_footprint_gib": 11.100716635584831,
+    "prefill_tps_8k": 3824.860836536528,
+    "decode_tps_8k": 127.05793841991948,
+    "mmap": false,
+    "at": "2026-11-21 13:20:34"
+  },
+  "ppl": {
+    "ppl": 6.6172,
+    "ppl_stderr": 0.12661,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "scored_tokens": 16368,
+    "seconds": 33.12153945793398,
+    "tokens_match_reference": true,
+    "ppl_from_dump": 6.615153108950409,
+    "top1_acc": 0.5755742913000977,
+    "at": "2026-11-21 13:20:25"
+  },
+  "kld": {
+    "kld_mean": 0.16707725508421203,
+    "kld_median": 0.07570556178689003,
+    "kld_p95": 0.5970447838306427,
+    "kld_p99": 1.5767763042449952,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8320503421309873,
+    "at": "2026-11-21 13:20:25"
+  },
+  "speed": {
+    "decode_tps": 135.8208875413746,
+    "prefill_tps": 3365.3877754918262,
+    "ttft_s": 0.15266999998129904,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3379.8279720372047,
+        "decode_tps": 135.265535832586,
+        "ttft_s": 0.15204025013372302,
+        "total_s": 1.0910342501010746
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3365.3877754918262,
+        "decode_tps": 136.01027252389014,
+        "ttft_s": 0.15266999998129904,
+        "total_s": 1.0865057499613613
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3364.149468109571,
+        "decode_tps": 135.8208875413746,
+        "ttft_s": 0.15274216700345278,
+        "total_s": 1.0878798339981586
+      }
+    ],
+    "at": "2026-11-21 13:20:30"
+  }
+}

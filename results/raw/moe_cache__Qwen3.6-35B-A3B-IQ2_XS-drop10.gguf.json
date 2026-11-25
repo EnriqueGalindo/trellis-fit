@@ -1,0 +1,14 @@
+[
+ {
+  "mode": "all-gpu",
+  "args": "(default)",
+  "decode_tps": 132.5,
+  "prefill_tps": 3303.0,
+  "decode_tps_8k": 124.1,
+  "prefill_tps_8k": 3819.0,
+  "footprint_gib_after_512": 0.55,
+  "rss_gib_after_512": 10.51,
+  "peak_footprint_gib_8k": 0.84,
+  "rss_gib_8k": 10.8
+ }
+]

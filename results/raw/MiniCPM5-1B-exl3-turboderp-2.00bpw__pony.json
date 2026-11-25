@@ -1,0 +1,81 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-exl3-turboderp-2.00bpw",
+  "runtime": "pony",
+  "size_on_disk_gib": 0.6831354191526771,
+  "weights_gib": 0.6735774669796228,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.34147516591474414,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " located in the city of Paris, France. Paris is known for its world-renowned architecture, cultural landmarks, and iconic",
+    "at": "2026-11-21 08:27:34"
+  },
+  "ppl": {
+    "ppl": 36.46129358355186,
+    "scored_tokens": 16368,
+    "top1_acc": 0.353677908113392,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 3.3035842501558363,
+    "at": "2026-11-21 08:27:38"
+  },
+  "kld": {
+    "kld_mean": 0.5651557370279928,
+    "kld_median": 0.38818003237247467,
+    "kld_p95": 1.7325436890125274,
+    "kld_p99": 3.2290983986854553,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.6207233626588465,
+    "at": "2026-11-21 08:27:38"
+  },
+  "speed": {
+    "decode_tps": 207.24734240712505,
+    "prefill_tps": 13175.388531160668,
+    "ttft_s": 0.044621125096455216,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 17907.289150940036,
+        "decode_tps": 207.16196427301708,
+        "ttft_s": 0.033797666896134615,
+        "total_s": 0.6465050419792533
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 13175.388531160668,
+        "decode_tps": 209.58899695258268,
+        "ttft_s": 0.044621125096455216,
+        "total_s": 0.6496292089577764
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 13036.946550281975,
+        "decode_tps": 207.24734240712505,
+        "ttft_s": 0.04523487505502999,
+        "total_s": 0.6569344999734312
+      }
+    ],
+    "at": "2026-11-21 08:27:41"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 1.330399990081787,
+    "load_peak_footprint_gib": 1.8439194336533546,
+    "peak_footprint_gib": 2.4333512634038925,
+    "mlx_peak_gib_during_8k": 1.5538481920957565,
+    "mlx_active_gib": 0.7348588332533836,
+    "prefill_tps_8k": 18701.719745098075,
+    "decode_tps_8k": 191.74210691143327,
+    "at": "2026-11-21 08:27:43"
+  }
+}

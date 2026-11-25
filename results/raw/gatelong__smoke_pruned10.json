@@ -1,0 +1,34 @@
+{
+ "label": "smoke_pruned10",
+ "runtime": "mlxl3",
+ "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10",
+ "items": {
+  "8k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 14.0,
+   "why": "stop"
+  },
+  "8k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 6.5,
+   "why": "stop"
+  },
+  "8k-0:copy-bravo": {
+   "ok": true,
+   "seconds": 667.4,
+   "why": "stop"
+  },
+  "8k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 6.0,
+   "why": "stop"
+  },
+  "8k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 7.1,
+   "why": "stop"
+  }
+ }
+}

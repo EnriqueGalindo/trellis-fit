@@ -1,0 +1,66 @@
+{
+  "model": "~/llm-trellis/models/Qwen3.6-35B-A3B-exl3-2.08bpw-drop25",
+  "runtime": "mlxl3",
+  "size_on_disk_gib": 10.573386817239225,
+  "weights_gib": 10.501941840164363,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "wall_s_including_load": 2.644357333192602,
+    "prompt": "What is the capital of France? Answer with just the city name. (chat turn)",
+    "completion": "\u2014 Thinking \u2014\nThinking: The user is asking for the capital of France. The capital of France is Paris. The user specifically requested to answer with just the city name. So I should output \"Paris\".\n\n\u2014 Answer \u2014\n\nParis",
+    "at": "2026-11-21 14:59:08"
+  },
+  "ppl": {
+    "ppl": 6.695156606416075,
+    "scored_tokens": 16368,
+    "top1_acc": 0.573985826001955,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c206c280ac95644f",
+    "seconds": 500.6406757920049,
+    "at": "2026-11-21 15:07:30"
+  },
+  "kld": {
+    "kld_mean": 0.18156585123386684,
+    "kld_median": 0.06344467401504517,
+    "kld_p95": 0.6660499334335327,
+    "kld_p99": 2.1704697132110597,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8341275659824047,
+    "at": "2026-11-21 15:07:30"
+  },
+  "speed": {
+    "decode_tps": 120.6,
+    "prefill_tps": 1859.5,
+    "ttft_s": 0.281,
+    "prompt_tokens": "512 + chat template",
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "wall_s": 2.8031666248571128,
+        "prefill_tps": 1847.3,
+        "decode_tps": 120.6,
+        "ttft_s": 0.283,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 2.8178050410933793,
+        "prefill_tps": 1898.1,
+        "decode_tps": 120.9,
+        "ttft_s": 0.275,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 2.819197667064145,
+        "prefill_tps": 1859.5,
+        "decode_tps": 120.5,
+        "ttft_s": 0.281,
+        "gen_tokens": 128
+      }
+    ],
+    "at": "2026-11-21 15:07:42"
+  }
+}

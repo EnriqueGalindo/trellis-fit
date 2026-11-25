@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pruned 2-bit Qwen3.6</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column of about 68 characters; tables and the memory strip may run wider inside their own scrollers. */
+:root {
+  --bg: #f6f8f5; --panel: #ecf0ea; --fg: #1a211c; --muted: #58645b; --rule: #d3dbd3;
+  --accent: #1d6a49; --warn: #8a5a12; --bar: #2c8a60; --bar-ref: #9aa69c;
+  --display: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #131714; --panel: #1b211c; --fg: #e3e9e3; --muted: #9aa79d; --rule: #2e372f;
+  --accent: #74c79e; --warn: #d8a657; --bar: #57b587; --bar-ref: #5b665d; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #131714; --panel: #1b211c; --fg: #e3e9e3; --muted: #9aa79d; --rule: #2e372f;
+  --accent: #74c79e; --warn: #d8a657; --bar: #57b587; --bar-ref: #5b665d; color-scheme: dark }
+html { margin: 0 } body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 2.5rem 4rem; }
+main { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.15rem; min-width: 0; }
+.kicker { font-family: var(--mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(1.7rem, 4.5vw, 2.35rem); line-height: 1.15; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; margin: 1.6rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--rule); text-wrap: balance; }
+h3 { font-family: var(--display); font-weight: 500; font-size: 1.05rem; margin: .6rem 0 0; }
+p, ul, ol { margin: 0; }
+ul, ol { padding-left: 1.25rem; display: flex; flex-direction: column; gap: .4rem; }
+.lede { font-size: 1.1rem; }
+.byline { color: var(--muted); font-size: .92rem; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code { font-family: var(--mono); font-size: .88em; background: var(--panel); padding: .05em .3em; border-radius: 3px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: .45rem .7rem .45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: .8rem; white-space: nowrap; }
+td.n, th.n { text-align: right; padding-right: 1rem; }
+tr.ours td { font-weight: 500; }
+caption { caption-side: bottom; text-align: left; color: var(--muted); font-size: .82rem; padding-top: .5rem; }
+.mem { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr; gap: .45rem .8rem; align-items: center; font-size: .88rem; }
+.mem .track { position: relative; height: 1.15rem; background: var(--panel); border-radius: 2px; min-width: 0; }
+.mem .fill { position: absolute; inset: 0 auto 0 0; background: var(--bar); border-radius: 2px; }
+.mem .fill.ref { background: var(--bar-ref); }
+.mem .val { position: absolute; right: .4rem; top: 0; line-height: 1.15rem; font-family: var(--mono); font-size: .78rem; color: var(--fg); }
+.memnote { color: var(--muted); font-size: .82rem; }
+.limit { border-left: 3px solid var(--warn); padding-left: .9rem; }
+.links { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-family: var(--mono); font-size: .85rem; }
+@media (max-width: 480px) { .mem { grid-template-columns: 1fr; gap: .15rem; } .mem .track { margin-bottom: .45rem; } }
+</style>
+
+</head>
+<body>
+<main>
+<div class="kicker">Lab note · November 2026 · Draft for review</div>
+<h1>A 35B mixture-of-experts model in 8.5 GiB on Apple Silicon</h1>
+<p class="byline">Enrique Galindo</p>
+
+<p class="lede">We took a 2.08-bit EXL3 quant of Qwen3.6-35B-A3B, removed the 26 least-used experts from every layer and stored the embedding table in 8 bits. The result is 8.46 GiB on disk and peaks at 10.19 GiB at 8k context. Against the full-precision model on 336 AppWorld task-runs it scores 67.9% to 72.6%.</p>
+
+<div class="links">
+  <a href="https://huggingface.co/meatlo4f/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10-q8emb">Model (8-bit embeddings)</a>
+  <a href="https://huggingface.co/meatlo4f/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10">Model (stock MLXL3)</a>
+  <a href="https://github.com/EnriqueGalindo/mlxl3/tree/fit-levers">Engine fork</a>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li><strong>Size.</strong> 10.57 GiB to 8.46 GiB with no re-quantization. Kept tensors are copied byte for byte.</li>
+  <li><strong>Distribution cost.</strong> Mean KL divergence against bf16 goes from 0.1141 to 0.1264. Top-1 agreement stays at 85.5%.</li>
+  <li><strong>Coding.</strong> On HumanEval the pruned quant matches bf16 at 159 of 164, where the unpruned quant scores 132. The unpruned quant gets stuck redrafting inside its reasoning; the pruned one almost never does. We cannot explain that yet.</li>
+  <li><strong>Agent work.</strong> On AppWorld the pruned model trails bf16 by about 5 points pooled over two rounds. The first round, taken alone, showed no gap, and that was an artifact of a reply limit that held the full model back.</li>
+  <li><strong>Harness.</strong> Qwen3.6's chat template drops earlier thinking unless <code>preserve_thinking</code> is set. Sending thinking back in the request is not enough.</li>
+</ul>
+
+<h2>What we built</h2>
+<p>The starting point is <a href="https://huggingface.co/UnstableLlama/Qwen3.6-35B-A3B-exl3-2.08bpw">UnstableLlama's 2.08 bpw EXL3</a> of <a href="https://huggingface.co/Qwen/Qwen3.6-35B-A3B">Qwen3.6-35B-A3B</a>: 40 layers, 256 experts per layer, 8 routed per token. The target is a 16 GB Mac mini, which leaves roughly 10.5 GiB for weights once the system and a working context are accounted for.</p>
+<ol>
+  <li><strong>Count expert use.</strong> We ran the bf16 model over the WikiText-2 training split plus a sample of code and counted how often the router picked each expert in each layer.</li>
+  <li><strong>Remove the 26 least-used experts per layer.</strong> Every layer keeps its 230 most-used experts, renumbered. The router matrix keeps the matching rows and <code>num_experts</code> is lowered. The vision tower is removed.</li>
+  <li><strong>Store embeddings in 8 bits.</strong> EXL3 leaves the 248,320 × 2,048 embedding table at 16 bits. We store int8 codes with one 16-bit scale per row and expand only the rows a lookup touches. Relative error is 0.85%.</li>
+</ol>
+
+<div class="mem" role="img" aria-label="Peak memory at 8k context against a 16 GiB machine: source quant 11.48, pruned 10.68, pruned with 8-bit embeddings 10.19 GiB.">
+  <div>Source 2.08 quant</div><div class="track"><div class="fill ref" style="width:71.8%"></div><span class="val">11.48</span></div>
+  <div>Pruned</div><div class="track"><div class="fill" style="width:66.7%"></div><span class="val">10.68</span></div>
+  <div>Pruned, 8-bit embeddings</div><div class="track"><div class="fill" style="width:63.7%"></div><span class="val">10.19</span></div>
+</div>
+<p class="memnote">Peak memory at 8k context in GiB. The full track is 16 GiB. Measured on a 128 GB M5 Max, not on a 16 GB machine.</p>
+
+<h2>Distribution measurements</h2>
+<p>WikiText-2 test, 16 windows of 2,048 tokens with the second half scored (16,368 tokens), compared token by token with the bf16 model's saved log-probabilities.</p>
+<div class="scroll"><table>
+  <thead><tr><th>Model</th><th class="n">On disk</th><th class="n">Perplexity</th><th class="n">KL, mean</th><th class="n">KL, 99th pct</th><th class="n">Top-1 agreement</th></tr></thead>
+  <tbody>
+    <tr><td>bf16</td><td class="n">67 GB</td><td class="n">5.903</td><td class="n">0</td><td class="n">0</td><td class="n">100%</td></tr>
+    <tr><td>Source 2.08 quant</td><td class="n">10.57 GiB</td><td class="n">6.303</td><td class="n">0.1141</td><td class="n">1.199</td><td class="n">85.9%</td></tr>
+    <tr><td>Pruned</td><td class="n">8.94 GiB</td><td class="n">6.353</td><td class="n">0.1261</td><td class="n">1.327</td><td class="n">85.4%</td></tr>
+    <tr class="ours"><td>Pruned, 8-bit embeddings</td><td class="n">8.46 GiB</td><td class="n">6.354</td><td class="n">0.1264</td><td class="n">1.332</td><td class="n">85.5%</td></tr>
+  </tbody>
+</table></div>
+<p>Pruning costs about a tenth of what the 2-bit quantization itself costs. The 8-bit embedding table costs nothing measurable.</p>
+
+<h2>Task tests</h2>
+<p>Our own harness: greedy decoding, thinking on, a 12,288-token reply limit. HumanEval solutions run in a sandbox against the benchmark's tests. The recall and copy tests plant 16 six-digit codes and 4 randomly generated Python functions in 32k- and 64k-token documents.</p>
+<div class="scroll"><table>
+  <thead><tr><th>Test</th><th class="n">bf16</th><th class="n">Source quant</th><th class="n">IQ2_XS GGUF</th><th class="n">Pruned</th><th class="n">Pruned, 8-bit</th></tr></thead>
+  <tbody>
+    <tr><td>HumanEval, of 164</td><td class="n">159</td><td class="n">132</td><td class="n">149</td><td class="n">159</td><td class="n">153</td></tr>
+    <tr><td>&nbsp;&nbsp;stuck in reasoning</td><td class="n">0</td><td class="n">31</td><td class="n">11</td><td class="n">2</td><td class="n">5</td></tr>
+    <tr><td>MMLU sample, of 150</td><td class="n">–</td><td class="n">124</td><td class="n">–</td><td class="n">121</td><td class="n">124</td></tr>
+    <tr><td>Code recall at 32k and 64k, of 64</td><td class="n">–</td><td class="n">64</td><td class="n">–</td><td class="n">64</td><td class="n">64</td></tr>
+    <tr><td>Exact copy at 32k and 64k, of 16</td><td class="n">–</td><td class="n">14</td><td class="n">–</td><td class="n">16</td><td class="n">16</td></tr>
+  </tbody>
+  <caption>A dash means not run. The GGUF ran in llama.cpp; everything else in MLXL3 or mlx-lm.</caption>
+</table></div>
+<h3>KL rank is not task rank</h3>
+<p>The source quant has the best KL of the three quants and the worst HumanEval score. Its failures are almost all one kind: the model redrafts its answer inside the reasoning block until the token limit. The full-precision model never does this. Sampling at temperature 1.0 halves it (31 to 15) and a repetition penalty does not help. The pruned quant, built from the same weights minus 10% of the experts, nearly stops doing it. One untested guess is that the rarely used experts are also the worst-quantized ones.</p>
+<p>The 6-problem gap between the two pruned variants is borderline on its own (7 against 1 discordant problems, p ≈ 0.07) and no other test repeats it.</p>
+
+<h2>AppWorld</h2>
+<p><a href="https://github.com/StonyBrookNLP/appworld">AppWorld</a> at commit <code>42b5bcf</code>, the stock ReAct code agent, the 168-task <code>test_normal</code> split, 50 steps per task, temperature 1.0, top-k 20. The full model ran in mlx-lm and the pruned model in our MLXL3 fork. We ran two rounds that differ in two settings.</p>
+<div class="scroll"><table>
+  <thead><tr><th>Round</th><th class="n">bf16</th><th class="n">Pruned, 8-bit</th><th class="n">Only bf16 passed</th><th class="n">Only pruned passed</th><th class="n">Sign test</th></tr></thead>
+  <tbody>
+    <tr><td>One: earlier thinking dropped, 8,192-token replies</td><td class="n">121 (72.0%)</td><td class="n">118 (70.2%)</td><td class="n">24</td><td class="n">21</td><td class="n">p = 0.77</td></tr>
+    <tr><td>Two: earlier thinking kept, 24,576-token replies</td><td class="n">123 (73.2%)</td><td class="n">110 (65.5%)</td><td class="n">28</td><td class="n">15</td><td class="n">p = 0.066</td></tr>
+    <tr class="ours"><td>Both, of 336 task-runs</td><td class="n">244 (72.6%)</td><td class="n">228 (67.9%)</td><td class="n"></td><td class="n"></td><td class="n"></td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><strong>Round one flattered the quant.</strong> The 8,192-token limit cut off 125 of the full model's 2,500 replies and 12 of the pruned model's 2,885. The full model passed 64% of the tasks where it was cut off and 80% of the rest.</li>
+  <li><strong>Round two is the fairer comparison.</strong> Cut-offs fell to 2 and 0. The pruned model took more steps (20.0 against 16.6 per task) and ran out of steps on 7 tasks, all failed; the full model ran out on 2.</li>
+  <li><strong>Run-to-run noise is large.</strong> The same model on the same tasks flipped 36 results between rounds for bf16 and 50 for the pruned model. One run cannot resolve a difference of fewer than about 10 tasks.</li>
+</ul>
+
+<h2>Two things the harness taught us</h2>
+<h3>Thinking sent back is not thinking rendered</h3>
+<p>Qwen3.6's chat template renders an earlier turn's reasoning only when <code>preserve_thinking</code> is true, or for turns after the last user message. In a ReAct loop every step follows a user message, so without the flag all earlier reasoning is dropped at render time, whatever the client sends. The same 39-message conversation renders to 37,918 prompt tokens with the flag and 9,656 without. The template has no <code>reasoning_effort</code> variable at all.</p>
+<h3>Empty thinking blocks teach the model not to think</h3>
+<p>MLXL3 sets <code>preserve_thinking</code> unconditionally. When the client does not send thinking back, every earlier assistant turn is rendered with an empty thinking block. AppWorld's prompt contains ten example assistant turns, and the model copied them: median reasoning fell to 178 characters per step and 27% of replies never closed the thinking block. With the history rendered the same way as mlx-lm, median reasoning returned to about 1,200 characters.</p>
+
+<h2>Engine</h2>
+<p>EXL3 on Apple Silicon runs in <a href="https://github.com/0xZKnw/mlxl3">MLXL3</a>, a Rust engine on MLX. Our <a href="https://github.com/EnriqueGalindo/mlxl3/tree/fit-levers">fork</a> adds four small changes on top of commit <code>1d0a519f</code>: loading the 8-bit embedding tensors, passing <code>reasoning_content</code> through to the template, a switch for the thinking-history behaviour above, and accepting an empty <code>tool_calls</code> field. Draft decoding (DFlash, MTP) was off throughout.</p>
+<p>Generation speed is 108 to 124 tokens per second in a short test and the same for all three quants. Under sustained AppWorld load the server slowed to about 40 tokens per second within ten minutes and further over hours; restarting it restored the speed. We have not found the cause.</p>
+
+<h2>Limits</h2>
+<div class="limit"><ul>
+  <li>One unseeded run per AppWorld cell. MLXL3 rejects <code>seed</code>, <code>top_p</code> and <code>min_p</code>, so runs are not paired by seed and the sampler is top-k only.</li>
+  <li>Nothing has been run on a 16 GB machine yet. Memory figures come from a 128 GB Mac.</li>
+  <li>Experts were ranked by use on WikiText-2 training text and code. Other workloads may lean on the removed experts.</li>
+  <li>MMLU and the long-context tests were not run on bf16, and the pruned model without 8-bit embeddings was not run on AppWorld.</li>
+  <li>The effect of pruning on thinking loops is an observation on one model at one bit rate. We have not tested other pruning levels.</li>
+  <li>Text only, and untested in exllamav3 on NVIDIA or AMD.</li>
+</ul></div>
+
+<h2>Reproduce</h2>
+<ul>
+  <li>Models: <a href="https://huggingface.co/meatlo4f/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10-q8emb">pruned10-q8emb</a> (needs the fork) and <a href="https://huggingface.co/meatlo4f/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10">pruned10</a> (stock MLXL3). Each carries <code>pruning.json</code> with the original index of every kept expert.</li>
+  <li><strong>pruned10</strong> runs in stock MLXL3 with no build step: <code>mlxl3 serve &lt;model&gt; --context-length 65536</code>.</li>
+  <li><strong>pruned10-q8emb</strong> does not load in stock MLXL3. It needs the fork built from source (Rust 1.89 or later, Python 3.12, MLX 0.32.2); the model card lists the exact commands.</li>
+  <li>Both paths were checked on 2026-11-25 from a fresh download of each model and a fresh clone of the fork.</li>
+  <li>The pruning and 8-bit conversion scripts are not published yet, so the models can be run but not rebuilt from this note.</li>
+  <li>Both models and the base are Apache 2.0. MLXL3 is MIT.</li>
+</ul>
+<p class="byline">Thanks to Cary Palmer for the AppWorld setup notes and for pushing for a task benchmark over KL alone.</p>
+</main>
+</body>
+</html>

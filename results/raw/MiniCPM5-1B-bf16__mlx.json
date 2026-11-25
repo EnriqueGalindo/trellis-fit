@@ -1,0 +1,71 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-bf16",
+  "runtime": "mlx",
+  "size_on_disk_gib": 2.0222321320325136,
+  "weights_gib": 2.0128590166568756,
+  "ppl": {
+    "ppl": 21.65915128981206,
+    "scored_tokens": 16368,
+    "top1_acc": 0.4114736070381232,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 3.7277727918699384,
+    "saved_ref": "MiniCPM5-1B",
+    "at": "2026-11-21 08:19:04"
+  },
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.3082506249193102,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " Paris, a city renowned for its rich history, cultural significance, and global influence. Paris has been the capital of France",
+    "at": "2026-11-21 08:26:05"
+  },
+  "speed": {
+    "decode_tps": 252.0466275232101,
+    "prefill_tps": 25422.83461737715,
+    "ttft_s": 0.022128541953861713,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 24510.01859600809,
+        "decode_tps": 252.0466275232101,
+        "ttft_s": 0.022677375003695488,
+        "total_s": 0.528785000089556
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 25763.274697982106,
+        "decode_tps": 252.10404713156635,
+        "ttft_s": 0.02184833283536136,
+        "total_s": 0.5276520419865847
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 25422.83461737715,
+        "decode_tps": 250.90003823886082,
+        "ttft_s": 0.022128541953861713,
+        "total_s": 0.5303580418694764
+      }
+    ],
+    "at": "2026-11-21 08:26:08"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 2.1726401522755623,
+    "load_peak_footprint_gib": 2.257860444486141,
+    "peak_footprint_gib": 3.3228329718112946,
+    "mlx_peak_gib_during_8k": 2.724902231246233,
+    "mlx_active_gib": 2.138893250375986,
+    "prefill_tps_8k": 23090.86866241812,
+    "decode_tps_8k": 200.39246139151086,
+    "at": "2026-11-21 08:26:10"
+  }
+}

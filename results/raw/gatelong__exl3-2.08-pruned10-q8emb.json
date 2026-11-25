@@ -1,0 +1,115 @@
+{
+ "label": "exl3-2.08-pruned10-q8emb",
+ "runtime": "mlxl3",
+ "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10-q8emb",
+ "items": {
+  "32k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 23.4,
+   "why": "stop"
+  },
+  "32k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 17.5,
+   "why": "stop"
+  },
+  "32k-0:copy-bravo": {
+   "ok": true,
+   "seconds": 17.7,
+   "why": "stop"
+  },
+  "32k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 17.9,
+   "why": "stop"
+  },
+  "32k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 18.9,
+   "why": "stop"
+  },
+  "32k-1:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 32.2,
+   "why": "stop"
+  },
+  "32k-1:copy-alpha": {
+   "ok": true,
+   "seconds": 20.0,
+   "why": "stop"
+  },
+  "32k-1:copy-bravo": {
+   "ok": true,
+   "seconds": 19.7,
+   "why": "stop"
+  },
+  "32k-1:copy-charlie": {
+   "ok": true,
+   "seconds": 19.5,
+   "why": "stop"
+  },
+  "32k-1:copy-dexter": {
+   "ok": true,
+   "seconds": 19.3,
+   "why": "stop"
+  },
+  "64k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 56.4,
+   "why": "stop"
+  },
+  "64k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 42.5,
+   "why": "stop"
+  },
+  "64k-0:copy-bravo": {
+   "ok": true,
+   "seconds": 41.2,
+   "why": "stop"
+  },
+  "64k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 42.3,
+   "why": "stop"
+  },
+  "64k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 42.1,
+   "why": "stop"
+  },
+  "64k-1:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 62.9,
+   "why": "stop"
+  },
+  "64k-1:copy-alpha": {
+   "ok": true,
+   "seconds": 48.8,
+   "why": "stop"
+  },
+  "64k-1:copy-bravo": {
+   "ok": true,
+   "seconds": 43.5,
+   "why": "stop"
+  },
+  "64k-1:copy-charlie": {
+   "ok": true,
+   "seconds": 43.5,
+   "why": "stop"
+  },
+  "64k-1:copy-dexter": {
+   "ok": true,
+   "seconds": 43.5,
+   "why": "stop"
+  }
+ }
+}

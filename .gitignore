@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+eval/refs/*/*.npy
+eval/wiki.test.raw
+eval/gate/HumanEval.jsonl.gz

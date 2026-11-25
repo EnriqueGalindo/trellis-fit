@@ -1,0 +1,75 @@
+{
+  "model": "~/llm-trellis/models/gguf/Inkling-2-Mini-GGUF/Inkling-2-Mini-UD-Q2_K_XL.gguf",
+  "runtime": "llama",
+  "size_on_disk_gib": 8.511091887950897,
+  "weights_gib": 8.511091887950897,
+  "budget": {
+    "budget_gib": 10.5,
+    "weights_gib": 8.511091887950897,
+    "over": false,
+    "at": "2026-11-21 13:42:33"
+  },
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 4.605765250045806,
+    "prompt": "The capital of France is",
+    "completion": " Paris.\n\nThe capital of France is Paris.\n\nA. True\n\nB. False\n\nC.\n\nD.",
+    "at": "2026-11-21 13:42:38"
+  },
+  "ppl": {
+    "ppl": 5.9895,
+    "ppl_stderr": 0.10851,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "scored_tokens": 16368,
+    "seconds": 63.0707985421177,
+    "ppl_from_dump": 5.987359297311686,
+    "top1_acc": 0.5856549364613881,
+    "at": "2026-11-21 13:43:44"
+  },
+  "speed": {
+    "decode_tps": 39.84087491816151,
+    "prefill_tps": 923.5192577213967,
+    "ttft_s": 0.5549109578132629,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 923.7075311029645,
+        "decode_tps": 39.777970020565526,
+        "ttft_s": 0.5548475000541657,
+        "total_s": 3.7476505408994853
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 923.3810173061801,
+        "decode_tps": 39.89585610852678,
+        "ttft_s": 0.5550750840920955,
+        "total_s": 3.7384167090058327
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 923.5192577213967,
+        "decode_tps": 39.84087491816151,
+        "ttft_s": 0.5549109578132629,
+        "total_s": 3.742670582840219
+      }
+    ],
+    "at": "2026-11-21 13:43:57"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 9.530952513217926,
+    "load_peak_footprint_gib": 9.530952513217926,
+    "peak_footprint_gib": 10.319206722080708,
+    "prefill_tps_8k": 523.70519346179,
+    "decode_tps_8k": 37.1120295283178,
+    "mmap": false,
+    "at": "2026-11-21 13:44:18"
+  }
+}

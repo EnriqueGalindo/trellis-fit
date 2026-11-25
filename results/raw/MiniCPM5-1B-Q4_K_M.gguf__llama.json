@@ -1,0 +1,81 @@
+{
+  "model": "~/llm-trellis/models/gguf/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q4_K_M.gguf",
+  "runtime": "llama",
+  "size_on_disk_gib": 0.6408113241195679,
+  "weights_gib": 0.6408113241195679,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.2623279169201851,
+    "prompt": "The capital of France is",
+    "completion": " Paris, la capitale de la France, Paris, est la ville la plus peupl\u00e9e du pays, la plus",
+    "at": "2026-11-21 08:27:44"
+  },
+  "ppl": {
+    "ppl": 23.9355,
+    "ppl_stderr": 0.5871,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "scored_tokens": 16368,
+    "seconds": 13.613060832954943,
+    "tokens_match_reference": true,
+    "ppl_from_dump": 23.895974346258292,
+    "top1_acc": 0.3945503421309873,
+    "at": "2026-11-21 08:28:03"
+  },
+  "kld": {
+    "kld_mean": 0.10501019950064122,
+    "kld_median": 0.07364730164408684,
+    "kld_p95": 0.3007943078875542,
+    "kld_p99": 0.6137553405761719,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.8189760508308895,
+    "at": "2026-11-21 08:28:03"
+  },
+  "speed": {
+    "decode_tps": 424.7392201520366,
+    "prefill_tps": 19909.783792191633,
+    "ttft_s": 0.026161208050325513,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 19921.403836426598,
+        "decode_tps": 426.69999630417334,
+        "ttft_s": 0.026161208050325513,
+        "total_s": 0.32399625005200505
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 19893.538485448968,
+        "decode_tps": 422.6908432515909,
+        "ttft_s": 0.026169500080868602,
+        "total_s": 0.3268087920732796
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 19909.783792191633,
+        "decode_tps": 424.7392201520366,
+        "ttft_s": 0.026143292197957635,
+        "total_s": 0.3253357501234859
+      }
+    ],
+    "at": "2026-11-21 08:28:05"
+  },
+  "mem": {
+    "context_tokens": 8192,
+    "loaded_footprint_gib": 1.1932540610432625,
+    "load_peak_footprint_gib": 1.1932540610432625,
+    "peak_footprint_gib": 1.280427522957325,
+    "prefill_tps_8k": 12596.71304518977,
+    "decode_tps_8k": 296.64787896766535,
+    "mmap": false,
+    "at": "2026-11-21 08:28:41"
+  }
+}

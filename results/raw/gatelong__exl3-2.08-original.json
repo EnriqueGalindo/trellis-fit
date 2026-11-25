@@ -1,0 +1,119 @@
+{
+ "label": "exl3-2.08-original",
+ "runtime": "mlxl3",
+ "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw",
+ "items": {
+  "32k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 60.3,
+   "why": "stop"
+  },
+  "32k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 28.6,
+   "why": "stop"
+  },
+  "32k-0:copy-bravo": {
+   "ok": false,
+   "seconds": 53.8,
+   "why": "length",
+   "got": "",
+   "want": "def rank_pack_637(c96, s57=5633):\n    g75 = [(c96 * i) - 63 for i in range(s57 % 5)]\n    if sum(g75) % 9 == 1:\n        return sorted(g75)[: 3]\n    return [x + 4971 for x in g75 if x != 4715]"
+  },
+  "32k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 19.1,
+   "why": "stop"
+  },
+  "32k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 25.1,
+   "why": "stop"
+  },
+  "32k-1:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 54.4,
+   "why": "stop"
+  },
+  "32k-1:copy-alpha": {
+   "ok": true,
+   "seconds": 25.4,
+   "why": "stop"
+  },
+  "32k-1:copy-bravo": {
+   "ok": true,
+   "seconds": 22.4,
+   "why": "stop"
+  },
+  "32k-1:copy-charlie": {
+   "ok": true,
+   "seconds": 22.8,
+   "why": "stop"
+  },
+  "32k-1:copy-dexter": {
+   "ok": true,
+   "seconds": 22.1,
+   "why": "stop"
+  },
+  "64k-0:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 61.7,
+   "why": "stop"
+  },
+  "64k-0:copy-alpha": {
+   "ok": true,
+   "seconds": 51.2,
+   "why": "stop"
+  },
+  "64k-0:copy-bravo": {
+   "ok": false,
+   "seconds": 91.6,
+   "why": "length",
+   "got": "",
+   "want": "def fold_merge_107(k25, z48=6261):\n    a4 = [(k25 ^ i) * 1215 for i in range(z48 % 7)]\n    if sum(a4) % 5 == 0:\n        return sorted(a4)[: 9]\n    return [x + 7934 for x in a4 if x != 4579]"
+  },
+  "64k-0:copy-charlie": {
+   "ok": true,
+   "seconds": 46.6,
+   "why": "stop"
+  },
+  "64k-0:copy-dexter": {
+   "ok": true,
+   "seconds": 70.1,
+   "why": "stop"
+  },
+  "64k-1:needles": {
+   "found": 16,
+   "of": 16,
+   "wrong": [],
+   "seconds": 93.8,
+   "why": "stop"
+  },
+  "64k-1:copy-alpha": {
+   "ok": true,
+   "seconds": 59.8,
+   "why": "stop"
+  },
+  "64k-1:copy-bravo": {
+   "ok": true,
+   "seconds": 45.3,
+   "why": "stop"
+  },
+  "64k-1:copy-charlie": {
+   "ok": true,
+   "seconds": 68.5,
+   "why": "stop"
+  },
+  "64k-1:copy-dexter": {
+   "ok": true,
+   "seconds": 51.5,
+   "why": "stop"
+  }
+ }
+}

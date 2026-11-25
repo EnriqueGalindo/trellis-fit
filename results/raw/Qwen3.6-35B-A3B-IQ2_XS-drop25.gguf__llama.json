@@ -1,0 +1,71 @@
+{
+  "model": "~/llm-trellis/models/gguf/own/Qwen3.6-35B-A3B-IQ2_XS-drop25.gguf",
+  "runtime": "llama",
+  "size_on_disk_gib": 10.891660332679749,
+  "weights_gib": 10.891660332679749,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.7671192910056561,
+    "prompt": "The capital of France is",
+    "completion": " Paris.\nA. \u6b63\u786e\nB. \u9519\u8bef\n\n<think>\n\n</think>\n\nA. \u6b63\u786e\n\n**\u89e3\u91ca",
+    "at": "2026-11-21 14:48:56"
+  },
+  "ppl": {
+    "ppl": 7.0124,
+    "ppl_stderr": 0.13505,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "scored_tokens": 16368,
+    "seconds": 32.86465120804496,
+    "tokens_match_reference": true,
+    "ppl_from_dump": 7.010307179005857,
+    "top1_acc": 0.5644550342130987,
+    "at": "2026-11-21 14:49:40"
+  },
+  "kld": {
+    "kld_mean": 0.23257763707365028,
+    "kld_median": 0.09316116198897362,
+    "kld_p95": 0.8815991401672363,
+    "kld_p99": 2.437010600566864,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8085288367546432,
+    "at": "2026-11-21 14:49:40"
+  },
+  "speed": {
+    "decode_tps": 132.2694839719589,
+    "prefill_tps": 3342.5383706431126,
+    "ttft_s": 0.15369687508791685,
+    "prompt_tokens": 512,
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3350.7195539354593,
+        "decode_tps": 132.39206398185289,
+        "ttft_s": 0.15331449988298118,
+        "total_s": 1.1126423329114914
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3342.5383706431126,
+        "decode_tps": 132.24510536915128,
+        "ttft_s": 0.15369687508791685,
+        "total_s": 1.114096875069663
+      },
+      {
+        "prompt_tokens": 512,
+        "gen_tokens": 128,
+        "prefill_tps": 3323.1216574069267,
+        "decode_tps": 132.2694839719589,
+        "ttft_s": 0.1546008330769837,
+        "total_s": 1.1148469999898225
+      }
+    ],
+    "at": "2026-11-21 14:49:44"
+  }
+}

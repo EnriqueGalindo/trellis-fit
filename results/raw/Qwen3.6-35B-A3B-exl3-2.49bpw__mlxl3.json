@@ -1,0 +1,80 @@
+{
+  "model": "~/llm-trellis/models/Qwen3.6-35B-A3B-exl3-2.49bpw",
+  "runtime": "mlxl3",
+  "size_on_disk_gib": 12.167176274582744,
+  "weights_gib": 12.095691840164363,
+  "budget": {
+    "budget_gib": 10.5,
+    "weights_gib": 12.095691840164363,
+    "over": true,
+    "at": "2026-11-21 13:33:07"
+  },
+  "load": {
+    "ok": true,
+    "sane": true,
+    "wall_s_including_load": 3.785509082954377,
+    "prompt": "What is the capital of France? Answer with just the city name. (chat turn)",
+    "completion": "ce is Paris.\n3.  Check constraints: \"Answer with just the city name.\"\n4.  Formulate output: \"Paris\"\n5.  Verify: Does \"Paris\" meet the constraint? Yes. Is it correct? Yes.\n6.  Final Output Generation: Paris. \nSelf-Correction/Refinement during thought: None needed. Straightforward factual question with a strict formatting constraint.\nOutput matches constraint.\nDone. \nOutput: Paris\n\n\u2014 Answer \u2014\n\nParis",
+    "at": "2026-11-21 13:33:11"
+  },
+  "mem": {
+    "context_tokens": "~8192 (prompt 8032 + template + 128 generated)",
+    "peak_footprint_gib": 13.084963954985142,
+    "last_footprint_gib": 7.158556401729584,
+    "prefill_tps_8k": 3178.9,
+    "decode_tps_8k": 104.2,
+    "at": "2026-11-21 13:42:19"
+  },
+  "ppl": {
+    "ppl": 6.211533491538665,
+    "scored_tokens": 16368,
+    "top1_acc": 0.5859604105571847,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c206c280ac95644f",
+    "seconds": 528.020120583009,
+    "at": "2026-11-21 13:42:00"
+  },
+  "kld": {
+    "kld_mean": 0.0861028571359197,
+    "kld_median": 0.036592062562704086,
+    "kld_p95": 0.30965580344200133,
+    "kld_p99": 0.9059859919548034,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8752443792766373,
+    "at": "2026-11-21 13:42:00"
+  },
+  "speed": {
+    "decode_tps": 119.9,
+    "prefill_tps": 1797.4,
+    "ttft_s": 0.29,
+    "prompt_tokens": "512 + chat template",
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "wall_s": 2.839900250080973,
+        "prefill_tps": 1797.4,
+        "decode_tps": 119.5,
+        "ttft_s": 0.29,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 2.8388049169443548,
+        "prefill_tps": 1808.7,
+        "decode_tps": 119.9,
+        "ttft_s": 0.289,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 2.8413869589567184,
+        "prefill_tps": 1787.3,
+        "decode_tps": 120.3,
+        "ttft_s": 0.292,
+        "gen_tokens": 128
+      }
+    ],
+    "at": "2026-11-21 13:42:13"
+  }
+}

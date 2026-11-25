@@ -1,0 +1,36 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-exl3-4.0bpw-cal16384",
+  "runtime": "pony",
+  "size_on_disk_gib": 0.8415417540818453,
+  "weights_gib": 0.8317640274763107,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.398702833103016,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " Paris, a city that has been a significant cultural, political, and economic center for centuries. Paris is known for its",
+    "at": "2026-11-21 16:16:56"
+  },
+  "ppl": {
+    "ppl": 22.003625635260345,
+    "scored_tokens": 16368,
+    "top1_acc": 0.40841886608015643,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 2.9854594161733985,
+    "at": "2026-11-21 16:17:00"
+  },
+  "kld": {
+    "kld_mean": 0.02741847173941114,
+    "kld_median": 0.016746902838349342,
+    "kld_p95": 0.08562693372368813,
+    "kld_p99": 0.17899258971214294,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.907074780058651,
+    "at": "2026-11-21 16:17:00"
+  }
+}

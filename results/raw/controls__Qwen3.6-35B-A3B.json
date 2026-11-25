@@ -1,0 +1,9 @@
+{
+  "self_kld_mean": 1.9127950468940214e-06,
+  "self_pass": true,
+  "wrong_ref_exit": 1,
+  "wrong_ref_pass": true,
+  "shift_by_one_kld_mean": 10.69158935546875,
+  "shift_pass": true,
+  "all_pass": true
+}

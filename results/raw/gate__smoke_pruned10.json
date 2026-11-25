@@ -1,0 +1,83 @@
+{
+ "label": "smoke_pruned10",
+ "runtime": "mlxl3",
+ "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10",
+ "needles": {
+  "6k-0": {
+   "found": 8,
+   "of": 8,
+   "seconds": 14.8,
+   "why": "stop"
+  },
+  "6k-1": {
+   "found": 8,
+   "of": 8,
+   "seconds": 17.1,
+   "why": "stop"
+  },
+  "14k-0": {
+   "found": 8,
+   "of": 8,
+   "seconds": 22.2,
+   "why": "stop"
+  },
+  "14k-1": {
+   "found": 8,
+   "of": 8,
+   "seconds": 21.2,
+   "why": "stop"
+  }
+ },
+ "humaneval": {
+  "HumanEval/0": {
+   "ok": true,
+   "why": "",
+   "tokens": 1250,
+   "seconds": 11.2
+  },
+  "HumanEval/1": {
+   "ok": true,
+   "why": "",
+   "tokens": 2645,
+   "seconds": 22.9
+  },
+  "HumanEval/2": {
+   "ok": true,
+   "why": "",
+   "tokens": 1097,
+   "seconds": 9.7
+  },
+  "HumanEval/3": {
+   "ok": true,
+   "why": "",
+   "tokens": 709,
+   "seconds": 6.2
+  }
+ },
+ "mmlu": {
+  "000:clinical_knowledge": {
+   "ok": true,
+   "pick": "D",
+   "tokens": 690,
+   "seconds": 6.4
+  },
+  "001:college_physics": {
+   "ok": false,
+   "pick": null,
+   "tokens": 2048,
+   "seconds": 18.1
+  },
+  "002:virology": {
+   "ok": false,
+   "pick": null,
+   "tokens": 2048,
+   "seconds": 17.7
+  },
+  "003:management": {
+   "ok": false,
+   "pick": null,
+   "tokens": 2048,
+   "seconds": 17.7
+  }
+ }
+}

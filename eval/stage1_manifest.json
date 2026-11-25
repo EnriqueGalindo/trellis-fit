@@ -1,0 +1,11 @@
+{"params": 1080632832, "rows": [
+ {"model": "../models/MiniCPM5-1B-bf16", "runtime": "mlx", "label": "MiniCPM5-1B source", "format": "bf16", "bpw": 16, "note": "KLD reference"},
+ {"model": "../models/MiniCPM5-1B-exl3-4.0bpw", "runtime": "pony", "label": "ponyexl3-convert 4.0", "format": "EXL3", "bpw": 4.0},
+ {"model": "../models/MiniCPM5-1B-exl3-2.0bpw", "runtime": "pony", "label": "ponyexl3-convert 2.0", "format": "EXL3", "bpw": 2.0},
+ {"model": "../models/MiniCPM5-1B-exl3-turboderp-4.00bpw", "runtime": "pony", "label": "turboderp 4.00 (exllamav3)", "format": "EXL3", "bpw": 4.0, "note": "published quant, for comparison"},
+ {"model": "../models/MiniCPM5-1B-exl3-turboderp-2.00bpw", "runtime": "pony", "label": "turboderp 2.00 (exllamav3)", "format": "EXL3", "bpw": 2.0, "note": "published quant, for comparison"},
+ {"model": "../models/MiniCPM5-1B-exl3-4.0bpw", "runtime": "mlxl3", "label": "ponyexl3-convert 4.0", "format": "EXL3", "bpw": 4.0},
+ {"model": "../models/MiniCPM5-1B-exl3-2.0bpw", "runtime": "mlxl3", "label": "ponyexl3-convert 2.0", "format": "EXL3", "bpw": 2.0},
+ {"model": "../models/gguf/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q4_K_M.gguf", "runtime": "llama", "label": "openbmb Q4_K_M", "format": "GGUF", "bpw": null, "note": "llama.cpp path shakedown"},
+ {"model": "../models/gguf/MiniCPM5-1B-GGUF/MiniCPM5-1B-F16.gguf", "runtime": "llama", "label": "openbmb F16", "format": "GGUF", "bpw": 16, "note": "cross-runtime noise floor"}
+]}

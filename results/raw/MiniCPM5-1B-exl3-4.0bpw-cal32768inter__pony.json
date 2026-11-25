@@ -1,0 +1,36 @@
+{
+  "model": "~/llm-trellis/models/MiniCPM5-1B-exl3-4.0bpw-cal32768inter",
+  "runtime": "pony",
+  "size_on_disk_gib": 0.8415416898205876,
+  "weights_gib": 0.8317640274763107,
+  "load": {
+    "ok": true,
+    "sane": true,
+    "load_s": 0.3882280841935426,
+    "model_type": "llama",
+    "prompt": "The capital of France is",
+    "completion": " Paris, a global hub for art, fashion, gastronomy, and culture. Paris is renowned for its iconic landmarks,",
+    "at": "2026-11-21 16:43:29"
+  },
+  "ppl": {
+    "ppl": 22.361541099629328,
+    "scored_tokens": 16368,
+    "top1_acc": 0.40670821114369504,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c1c9988228c2318c",
+    "seconds": 2.8933642499614507,
+    "at": "2026-11-21 16:43:32"
+  },
+  "kld": {
+    "kld_mean": 0.031786101197915216,
+    "kld_median": 0.020367082208395004,
+    "kld_p95": 0.09601523205637932,
+    "kld_p99": 0.20314075395464898,
+    "kld_tokens": 16368,
+    "ref": "MiniCPM5-1B",
+    "ref_ppl": 21.65915128981206,
+    "top1_agree_with_ref": 0.8963831867057673,
+    "at": "2026-11-21 16:43:32"
+  }
+}

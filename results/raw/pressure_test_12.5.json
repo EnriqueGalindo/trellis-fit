@@ -1,0 +1,56 @@
+[
+ {
+  "available_target_gib": 12.5,
+  "ballast_gib": 85.4,
+  "available_measured_gib": 12.4,
+  "rows": [
+   {
+    "ok": true,
+    "wall_s_4_runs": 20.2,
+    "decode_tps": 121.1,
+    "prefill_tps": 1664,
+    "decode_tps_8k": 106.0,
+    "prefill_tps_8k": 3030.7,
+    "must_keep_gib": 11.54,
+    "run_wall_s": [
+     4.5,
+     3.7,
+     3.7,
+     6.3
+    ],
+    "pageins": 78,
+    "candidate": "EXL3 2.08 / MLXL3",
+    "swap_growth_gib": 0.0,
+    "available_after_gib": 18.4
+   },
+   {
+    "ok": true,
+    "load_s": 2.0,
+    "decode_tps": 133.5,
+    "prefill_tps": 3275,
+    "decode_tps_8k": 124.8,
+    "prefill_tps_8k": 3802,
+    "must_keep_gib": 0.84,
+    "resident_gib": 10.65,
+    "pageins": 705331,
+    "candidate": "IQ2_XS GGUF / llama.cpp b12608",
+    "swap_growth_gib": 0.0,
+    "available_after_gib": 18.5
+   },
+   {
+    "ok": true,
+    "load_s": 2.5,
+    "decode_tps": 40.1,
+    "prefill_tps": 921,
+    "decode_tps_8k": 38.2,
+    "prefill_tps_8k": 579,
+    "must_keep_gib": 2.03,
+    "resident_gib": 9.83,
+    "pageins": 561024,
+    "candidate": "Inkling UD-Q2_K_XL / llama.cpp Unsloth",
+    "swap_growth_gib": -0.01,
+    "available_after_gib": 15.7
+   }
+  ]
+ }
+]

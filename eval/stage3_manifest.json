@@ -1,0 +1,76 @@
+{
+ "params": 35950000000,
+ "rows": [
+  {
+   "model": "../models/Qwen3.6-35B-A3B-bf16",
+   "runtime": "mlx",
+   "label": "Qwen3.6-35B-A3B source",
+   "format": "bf16",
+   "bpw": 16,
+   "note": "KLD reference"
+  },
+  {
+   "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw",
+   "runtime": "mlxl3",
+   "label": "Qwen3.6 EXL3 2.08 (primary)",
+   "format": "EXL3",
+   "bpw": 2.08,
+   "note": "11,276,374,187 bytes: 2 MB over a strict 10.5 GiB"
+  },
+  {
+   "model": "../models/Qwen3.6-35B-A3B-exl3-2.08bpw",
+   "runtime": "pony",
+   "label": "Qwen3.6 EXL3 2.08 (primary)",
+   "format": "EXL3",
+   "bpw": 2.08
+  },
+  {
+   "model": "../models/Qwen3.6-35B-A3B-exl3-2.49bpw",
+   "runtime": "mlxl3",
+   "label": "Qwen3.6 EXL3 2.49",
+   "format": "EXL3",
+   "bpw": 2.49
+  },
+  {
+   "model": "../models/Qwen3.6-35B-A3B-exl3-2.49bpw",
+   "runtime": "pony",
+   "label": "Qwen3.6 EXL3 2.49",
+   "format": "EXL3",
+   "bpw": 2.49
+  },
+  {
+   "model": "../models/gguf/Qwen_Qwen3.6-35B-A3B-GGUF/Qwen_Qwen3.6-35B-A3B-IQ2_XS.gguf",
+   "runtime": "llama-b12359",
+   "label": "Qwen3.6 IQ2_XS",
+   "format": "GGUF",
+   "bpw": null,
+   "note": "mainline b12359"
+  },
+  {
+   "model": "../models/gguf/Qwen_Qwen3.6-35B-A3B-GGUF/Qwen_Qwen3.6-35B-A3B-IQ2_XS.gguf",
+   "runtime": "llama",
+   "label": "Qwen3.6 IQ2_XS",
+   "format": "GGUF",
+   "bpw": null,
+   "note": "Unsloth build b12588"
+  },
+  {
+   "model": "../models/gguf/Inkling-2-Mini-GGUF/Inkling-2-Mini-UD-Q2_K_XL.gguf",
+   "runtime": "llama",
+   "label": "Inkling-2-Mini UD-Q2_K_XL",
+   "format": "GGUF",
+   "bpw": null,
+   "note": "Unsloth build b12588; different model, so no KLD and PPL is not comparable across models",
+   "params": 26400000000
+  },
+  {
+   "model": "../models/gguf/Inkling-2-Mini-GGUF/Inkling-2-Mini-UD-IQ3_XXS.gguf",
+   "runtime": "llama",
+   "label": "Inkling-2-Mini UD-IQ3_XXS",
+   "format": "GGUF",
+   "bpw": null,
+   "note": "Unsloth build b12588; different model, so no KLD and PPL is not comparable across models",
+   "params": 26400000000
+  }
+ ]
+}

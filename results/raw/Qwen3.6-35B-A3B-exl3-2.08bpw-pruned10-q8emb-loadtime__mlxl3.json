@@ -1,0 +1,80 @@
+{
+  "model": "~/llm-trellis/models/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10",
+  "runtime": "mlxl3",
+  "size_on_disk_gib": 8.93728549592197,
+  "weights_gib": 8.887981157749891,
+  "budget": {
+    "budget_gib": 10.5,
+    "weights_gib": 8.887981157749891,
+    "over": false,
+    "at": "2026-11-22 15:19:08"
+  },
+  "load": {
+    "ok": true,
+    "sane": true,
+    "wall_s_including_load": 4.842468917137012,
+    "prompt": "What is the capital of France? Answer with just the city name. (chat turn)",
+    "completion": "asks for the capital of France.\n2.  **Retrieve knowledge:** The capital of France is Paris.\n3.  **Check constraints:** The user requested \"Answer with just the city name.\"\n4.  **Formulate response:** \"Paris\".\n5.  **Final Output Generation:** Paris.\n\n*Self-Correction/Verification:*\n- Is Paris the capital? Yes.\n- Is it just the city name? Yes.\n- No extra text? Yes.\n\nResult: Paris.\n\n\u2014 Answer \u2014\n\nParis",
+    "at": "2026-11-22 15:19:13"
+  },
+  "ppl": {
+    "ppl": 6.351930694733956,
+    "scored_tokens": 16368,
+    "top1_acc": 0.583272238514174,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c206c280ac95644f",
+    "seconds": 506.488286125008,
+    "at": "2026-11-22 15:27:41"
+  },
+  "kld": {
+    "kld_mean": 0.12620988159862606,
+    "kld_median": 0.04924779012799263,
+    "kld_p95": 0.4699381709098816,
+    "kld_p99": 1.3411699450016021,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8545332355816226,
+    "at": "2026-11-22 15:27:41"
+  },
+  "speed": {
+    "decode_tps": 120.1,
+    "prefill_tps": 1850.8,
+    "ttft_s": 0.282,
+    "prompt_tokens": "512 + chat template",
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "wall_s": 3.201401707949117,
+        "prefill_tps": 1846.2,
+        "decode_tps": 118.9,
+        "ttft_s": 0.283,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 3.1937740829307586,
+        "prefill_tps": 1850.8,
+        "decode_tps": 120.6,
+        "ttft_s": 0.282,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 3.1924572091083974,
+        "prefill_tps": 1862.8,
+        "decode_tps": 120.1,
+        "ttft_s": 0.28,
+        "gen_tokens": 128
+      }
+    ],
+    "at": "2026-11-22 15:27:55"
+  },
+  "mem": {
+    "context_tokens": "~8192 (prompt 8032 + template + 128 generated)",
+    "peak_footprint_gib": 14.485220648348331,
+    "last_footprint_gib": 0.0,
+    "prefill_tps_8k": 2477.3,
+    "decode_tps_8k": 105.5,
+    "at": "2026-11-22 15:28:02"
+  }
+}

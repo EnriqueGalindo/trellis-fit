@@ -1,0 +1,13 @@
+{
+  "model": "~/llm-trellis/models/Qwen3.5-122B-A10B-exl3-4.00bpw",
+  "runtime": "mlxl3",
+  "size_on_disk_gib": 59.40847082156688,
+  "weights_gib": 59.326923195272684,
+  "load": {
+    "ok": false,
+    "exit": 1,
+    "error": "Traceback (most recent call last):\n  File \"~/llm-trellis/eval/worker_mlxl3.py\", line 192, in <module>\n    {\"load\": t_load, \"ppl\": t_ppl, \"speed\": t_speed, \"mem\": t_mem}[a.test](a)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"~/llm-trellis/eval/worker_mlxl3.py\", line 75, in t_load\n    r = run_chat(a.model, \"What is the capital of France? Answer with just the city name.\", 256)\n  File \"~/llm-trellis/eval/worker_mlxl3.py\", line 62, in run_chat\n    raise RuntimeError(f\"mlxl3 run exited {p.returncode}: {(err or out).strip()[-2000:]}\")\nRuntimeError: mlxl3 run exited 2: Error: missing field `partial_rotary_factor` at line 101 column 5",
+    "seconds": 0.6621188328135759,
+    "at": "2026-11-21 09:24:00"
+  }
+}

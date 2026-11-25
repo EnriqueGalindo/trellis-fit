@@ -1,0 +1,49 @@
+diff --git a/experiments/code/simplified/language_model.py b/experiments/code/simplified/language_model.py
+index c3ba3ab..fc3e111 100644
+--- a/experiments/code/simplified/language_model.py
++++ b/experiments/code/simplified/language_model.py
+@@ -187,6 +187,7 @@ def non_cached_lm_call(
+     api_type: API_TYPE_LITERAL = "chat_completions",
+     # below params are only from appworld
+     make_cacheable: bool = False,
++    extra_body: dict[str, Any] | None = None,  # llm-trellis: forwarded to local servers (e.g. top_k)
+     **kwargs: Any,
+ ) -> dict[str, Any]:
+     if SHOW_LM_CALL_CACHE_MISSES:
+@@ -197,6 +198,8 @@ def non_cached_lm_call(
+         raise ValueError(f"Unexpected kwargs in non_cached_lm_call: {kwargs}")
+     kwargs["model"] = model
+     kwargs["messages"] = messages
++    if extra_body is not None:
++        kwargs["extra_body"] = extra_body
+     if frequency_penalty is not None:
+         kwargs["frequency_penalty"] = frequency_penalty
+     if logprobs is not None:
+@@ -701,6 +704,12 @@ class LanguageModel:
+                     for choice in response["choices"]:
+                         message_ = choice["message"]
+                         maybe_insert_reasoning_content(message_)
++                        # Local patch: when the model never closes its thinking block, the server returns
++                        # the whole reply as reasoning and an empty answer. Use that text as the answer.
++                        if not (message_.get("content") or "").strip() and message_.get(
++                            "reasoning_content"
++                        ):
++                            message_["content"] = message_["reasoning_content"]
+                         # NOTE: none and [] tool_call are different: In the latter case, openai/litellm
+                         # expects all subsequent calls to pass tools field. In the former case, it does not.
+                         # So do not do this: message_["tool_calls"] = message_["tool_calls"] or [] in here.
+diff --git a/src/appworld/requester.py b/src/appworld/requester.py
+index 27f8e58..0d29466 100644
+--- a/src/appworld/requester.py
++++ b/src/appworld/requester.py
+@@ -114,7 +114,9 @@ class RequestTracker:
+ 
+     def save(self, file_path: str) -> None:
+         serialized_requests: list[dict[str, Any]] = [
+-            cast_dict(jsonable_encoder(request)) for request in self.requests
++            # Local patch: a model that passes a literal `...` as an API argument crashed the log writer.
++            cast_dict(jsonable_encoder(request, custom_encoder={type(Ellipsis): lambda _: "..."}))
++            for request in self.requests
+         ]
+         write_jsonl(serialized_requests, file_path, silent=True)
+ 

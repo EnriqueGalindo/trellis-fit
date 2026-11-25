@@ -1,0 +1,80 @@
+{
+  "model": "~/llm-trellis/models/Qwen3.6-35B-A3B-exl3-2.08bpw",
+  "runtime": "mlxl3",
+  "size_on_disk_gib": 10.573388396762311,
+  "weights_gib": 10.501941840164363,
+  "budget": {
+    "budget_gib": 10.5,
+    "weights_gib": 10.501941840164363,
+    "over": true,
+    "at": "2026-11-21 18:05:32"
+  },
+  "load": {
+    "ok": true,
+    "sane": true,
+    "wall_s_including_load": 3.438069083960727,
+    "prompt": "What is the capital of France? Answer with just the city name. (chat turn)",
+    "completion": "France?\"\n2.  **Identify the constraint**: \"Answer with just the city name.\"\n3.  **Retrieve knowledge**: The capital of France is Paris.\n4.  **Format the output**: Only the city name, no extra text.\n5.  **Final Output**: Paris.\n\n*Self-Correction/Verification*:\n- Is Paris the capital? Yes.\n- Is the output just the city name? Yes.\n- Does it meet the constraint? Yes.\n\nResult: Paris.\n\n\u2014 Answer \u2014\n\nParis",
+    "at": "2026-11-21 13:20:38"
+  },
+  "speed": {
+    "decode_tps": 121.7,
+    "prefill_tps": 1828.9,
+    "ttft_s": 0.286,
+    "prompt_tokens": "512 + chat template",
+    "gen_tokens": 128,
+    "runs": [
+      {
+        "wall_s": 2.7880282918922603,
+        "prefill_tps": 1828.9,
+        "decode_tps": 121.7,
+        "ttft_s": 0.286,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 2.779816458001733,
+        "prefill_tps": 1833.1,
+        "decode_tps": 121.6,
+        "ttft_s": 0.285,
+        "gen_tokens": 128
+      },
+      {
+        "wall_s": 2.771072540897876,
+        "prefill_tps": 1814.6,
+        "decode_tps": 122.4,
+        "ttft_s": 0.288,
+        "gen_tokens": 128
+      }
+    ],
+    "at": "2026-11-21 18:04:15"
+  },
+  "mem": {
+    "context_tokens": "~8192 (prompt 8032 + template + 128 generated)",
+    "peak_footprint_gib": 11.484942391514778,
+    "last_footprint_gib": 3.405916005373001,
+    "prefill_tps_8k": 3260.6,
+    "decode_tps_8k": 106.4,
+    "at": "2026-11-21 13:47:58"
+  },
+  "ppl": {
+    "ppl": 6.3024918693836485,
+    "scored_tokens": 16368,
+    "top1_acc": 0.5844330400782014,
+    "n_ctx": 2048,
+    "n_chunks": 16,
+    "tokens_sha": "c206c280ac95644f",
+    "seconds": 505.305871458957,
+    "at": "2026-11-21 18:25:45"
+  },
+  "kld": {
+    "kld_mean": 0.11413585578494075,
+    "kld_median": 0.046814003959298134,
+    "kld_p95": 0.41569423824548724,
+    "kld_p99": 1.1985117423534393,
+    "kld_tokens": 16368,
+    "ref": "Qwen3.6-35B-A3B",
+    "ref_ppl": 5.903429660296319,
+    "top1_agree_with_ref": 0.8593597262952102,
+    "at": "2026-11-21 18:25:45"
+  }
+}
