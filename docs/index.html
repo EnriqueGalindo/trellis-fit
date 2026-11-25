@@ -66,6 +66,7 @@ caption { caption-side: bottom; text-align: left; color: var(--muted); font-size
   <a href="https://huggingface.co/meatlo4f/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10-q8emb">Model (8-bit embeddings)</a>
   <a href="https://huggingface.co/meatlo4f/Qwen3.6-35B-A3B-exl3-2.08bpw-pruned10">Model (stock MLXL3)</a>
   <a href="https://github.com/EnriqueGalindo/mlxl3/tree/fit-levers">Engine fork</a>
+  <a href="https://github.com/EnriqueGalindo/trellis-fit">Scripts and data</a>
 </div>
 
 <h2>Summary</h2>
@@ -164,7 +165,7 @@ caption { caption-side: bottom; text-align: left; color: var(--muted); font-size
   <li><strong>pruned10</strong> runs in stock MLXL3 with no build step: <code>mlxl3 serve &lt;model&gt; --context-length 65536</code>.</li>
   <li><strong>pruned10-q8emb</strong> does not load in stock MLXL3. It needs the fork built from source (Rust 1.89 or later, Python 3.12, MLX 0.32.2); the model card lists the exact commands.</li>
   <li>Both paths were checked on 2026-11-25 from a fresh download of each model and a fresh clone of the fork.</li>
-  <li>The pruning and 8-bit conversion scripts are not published yet, so the models can be run but not rebuilt from this note.</li>
+  <li>Scripts, recipe, lab notebook and per-task results are in <a href="https://github.com/EnriqueGalindo/trellis-fit">trellis-fit</a>. <code>prune_experts.py</code> followed by <code>embed_q8.py</code> rebuilds both models from the source quant, and the output is byte-identical to the published weights.</li>
   <li>Both models and the base are Apache 2.0. MLXL3 is MIT.</li>
 </ul>
 <p class="byline">Thanks to Cary Palmer for the AppWorld setup notes and for pushing for a task benchmark over KL alone.</p>
